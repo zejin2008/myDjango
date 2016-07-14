@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^add/(?P<name>\w*)/',add),
     url(r'^del/(?P<id>\d*)/',delete),
     url(r'^update/(?P<id>\d*)/(?P<name>\w*)/',update),
-    url(r'^get/(?P<id>\d*)/',get)
+    url(r'^get/(?P<id>\d*)/',get),
+    url(r'^userlist/',userlist)
     
 ]

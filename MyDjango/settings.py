@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from django.conf.global_settings import TEMPLATE_DEBUG, TEMPLATE_DIRS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,6 +25,10 @@ SECRET_KEY = 'h@m4hn(4ak-pe#*j+-eeep5x#me+rj&=0^t*c&l5w-*@))3qte'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+
+
+
 
 ALLOWED_HOSTS = []
 
@@ -56,7 +61,7 @@ ROOT_URLCONF = 'MyDjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'template'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+       
     },
 ]
 
@@ -85,6 +91,8 @@ DATABASES = {
     'PORT': '3306',
     }
 }
+
+
 
 
 # Password validation

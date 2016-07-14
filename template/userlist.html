@@ -1,0 +1,35 @@
+{% extends "master/layout.html" %}
+{% load myFunc %}
+
+
+{% block content %}
+
+
+	<h1>{{  user  }}</h1>
+	
+	<table border=2>
+	
+		{% for item in data %}
+		    <tr>
+		       <td>{{  item.id  }}</td>
+		       <td>{% mytagfunc item.id %}</td>
+		       
+		       <td>{{  item.name|upper  }}</td>
+		       <td>{{  item.c_time|date:"Y-m-d H:i:s"  }}</td>
+		       <td>{{  item.u_time|date:"Y-m-d H:i:s"  }}</td>
+		    </tr>
+		{% endfor %}
+
+	</table>
+	
+	{% if user %}
+	   <h2>Real user</h2>
+	{% else %}
+	    <h2>Fake</h2>
+	{% endif %}
+	
+
+{% endblock %}
+
+
+

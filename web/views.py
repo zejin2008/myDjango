@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http.response import HttpResponse
 
 from models import *
@@ -51,7 +51,11 @@ def get(request,id):
     
 
 
-
+def userlist(request):
+    
+    user_list = users.objects.all()
+    result = render_to_response('userlist.html',{'data':user_list,'user':'Django Zejin'})
+    return result
 
 
 
