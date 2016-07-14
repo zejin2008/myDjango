@@ -22,6 +22,10 @@ urlpatterns = [
     
     url(r'^index/',index),
     url(r'^login/(?P<name>\w*)/(?P<id>\d*)/',login),
-    url(r'^login/(?P<name>\w*)/',login,{'id':222})
+    url(r'^login/(?P<name>\w*)/',login,{'id':222}),
+    url(r'^add/(?P<name>\w*)/',add),
+    url(r'^del/(?P<id>\d*)/',delete),
+    url(r'^update/(?P<id>\d*)/(?P<name>\w*)/',update),
+    url(r'^get/(?P<id>\d*)/',get)
     
 ]
